@@ -1,0 +1,333 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="txtnote.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:my="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded_1"
+    
+   
+
+
+    >
+
+
+
+    <phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Key="ToDoListBoxItemTemplate">
+
+            <Grid HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch"
+                  Width="420" 
+
+                  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                </Grid.RowDefinitions>
+
+                <CheckBox 
+                    IsChecked="{Binding IsComplete, Mode=TwoWay}" 
+                    Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="0,-10,0,-20"
+
+                    RenderTransformOrigin="0.9,0.9"
+                    
+>
+                </CheckBox>
+
+                <HyperlinkButton Name="noteLocation"
+                                        Content="{Binding ItemName}"
+                                        Tag="{Binding ItemName}"
+                                        Click="noteLocation_click"
+                                        FontSize="28" 
+                    Grid.Column="1" Grid.ColumnSpan="3" 
+                                 Grid.RowSpan="1"
+                    VerticalAlignment="Top" 
+                                 HorizontalAlignment="Left"
+                                 Margin="0,6,0,-20"
+                                
+                                 >
+                    <toolkit:ContextMenuService.ContextMenu>
+
+                        <toolkit:ContextMenu
+                                        >
+
+                            <toolkit:MenuItem Header="{Binding Path=Resource1.shanchu, Source={StaticResource LocalizedStrings }}"
+ Click="Delete_Click"
+                                                        />
+                            <toolkit:MenuItem Header="{Binding Path=Resource1.skydrive, Source={StaticResource LocalizedStrings }}"
+ Click="Skydrive_Click"
+                                                          Tag="{Binding ItemName}"/>
+                            <toolkit:MenuItem 
+                                Name="PinToStart"
+                                Header="{Binding Path=Resource1.PinToStart, Source={StaticResource LocalizedStrings }}"
+ Click="PinToStart_Click"
+                                                          />
+                            <toolkit:MenuItem 
+                                Name="addImage"
+                                Header="{Binding Path=Resource1.addImage, Source={StaticResource LocalizedStrings }}"
+ Click="addImage_Click"
+                                                          />
+
+                        </toolkit:ContextMenu>
+
+                    </toolkit:ContextMenuService.ContextMenu>
+
+                </HyperlinkButton>
+
+
+            </Grid>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+
+
+
+
+
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <!--Panorama 控件-->
+        <controls:Panorama 
+            
+            Name="MainPano"
+            
+            SelectionChanged="Panorama_SelectionChanged"
+            >
+            <controls:Panorama.Title>
+                <TextBlock
+                    Text="txtNote"                   
+                    Margin="0,20,0,0"
+                    FontSize="150"
+                    Height="170"
+                    />
+            </controls:Panorama.Title>
+
+
+
+            <controls:PanoramaItem
+                Name="ViewPano"
+                >
+
+
+                <controls:PanoramaItem.Header>
+
+                    <TextBox Name="serchBox"
+                        Text="{Binding Path=Resource1.searchBox, Source={StaticResource LocalizedStrings }}"
+
+                             LostFocus="serchBox_LostFocus"
+                             Margin="-10,-20,0,0"
+
+                             GotFocus="serchBox_GotFocus"
+                         HorizontalAlignment="Stretch" 
+                             TextChanged="serchBox_TextChanged"
+                        FontSize="28" Width="497" />
+
+                </controls:PanoramaItem.Header>
+                <Canvas      
+                        >
+                    <ListBox Name="noteListBox"                                 
+                     VerticalAlignment="Stretch"
+                         HorizontalAlignment="Stretch"
+                         Margin="0,8,0,0"                               
+                           Height="480"      
+                        
+                         
+                       ItemsSource="{Binding AllToDoItems}" 
+                         
+                     ItemTemplate="{StaticResource ToDoListBoxItemTemplate}"   Canvas.Top="10"      
+                         />
+                    <CheckBox Name="allTextSearch"
+                                Click="allTextSearch_Click" 
+                              Canvas.Left="264" Canvas.Top="-45"
+                              
+                              >
+                        <TextBlock 
+                                Text="{Binding Path=Resource1.HelloWorld, Source={StaticResource LocalizedStrings }}"   FontWeight="Bold"
+                                />
+                    </CheckBox>
+                    <toolkit:ListPicker
+                x:Name="categoriesListPicker"                 
+                        HorizontalAlignment="Stretch"
+                        Margin="0"
+                        Width="130"
+                        Height="255"
+                        SelectionChanged="categoriesListPicker_SelectionChanged"
+                      
+                DisplayMemberPath="Name" Canvas.Left="132" Canvas.Top="-62"  RenderTransformOrigin="0.5,0.5"
+
+                        >
+                        <toolkit:ListPicker.RenderTransform>
+                            <CompositeTransform ScaleY="0.8" ScaleX="0.8"/>
+                        </toolkit:ListPicker.RenderTransform>
+                        <toolkit:ListPickerItem Content="{Binding Path=Resource1.quanbu, Source={StaticResource LocalizedStrings }}"                                           
+                                                Tag="3"
+                                                />
+                        <toolkit:ListPickerItem   Content="{Binding Path=Resource1.richang, Source={StaticResource LocalizedStrings }}"
+                                                  Tag="0"
+                                                  />
+                        <toolkit:ListPickerItem Content="{Binding Path=Resource1.gongzuo, Source={StaticResource LocalizedStrings }}"
+                                                Tag="1"
+                                                />
+                        <toolkit:ListPickerItem Content="{Binding Path=Resource1.xingqu, Source={StaticResource LocalizedStrings }}" 
+                                                Tag="2"
+                                                />
+
+
+
+                    </toolkit:ListPicker>
+                    <CheckBox Name="Allselect"
+                              Click="Allselect_Click"
+                              Margin="0,-45,0,0" >
+
+                        <TextBlock 
+                                Text="{Binding Path=Resource1.quanxuan, Source={StaticResource LocalizedStrings }}"
+                            FontWeight="Bold"
+                                />
+                    </CheckBox>
+                </Canvas>
+
+
+
+            </controls:PanoramaItem>
+
+
+            <controls:PanoramaItem
+                Name="AddPano"
+                >
+                <controls:PanoramaItem.Header>
+
+                    <TextBlock 
+                            Name="AddHeader"
+                            Text="{Binding Path=Resource1.addtxt, Source={StaticResource LocalizedStrings }}"
+ FontSize="{StaticResource PhoneFontSizeLarge}" 
+                            VerticalAlignment="Top"
+                            Margin="0,-15"
+                            />
+                </controls:PanoramaItem.Header>
+                <StackPanel x:Name="ContentPanel" Grid.Row="1" >
+                    <Canvas   
+                >
+
+                        <ScrollViewer 
+                            Name="textSroll"
+                            VerticalScrollBarVisibility="Visible"
+                            Height="415"
+                            Width="420"  
+                            Canvas.Left="0" Canvas.Top="120" 
+                                      >
+
+                            <TextBox 
+                            
+                            Name="editTextBox"
+                                 
+                            Width="420"  
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         SizeChanged="editTextBox_SizeChanged" 
+                                >
+
+
+
+
+                            </TextBox>
+
+
+                        </ScrollViewer>
+
+
+
+                    </Canvas>
+
+                    <StackPanel Name="Picker" Height="352"
+                             Margin="0,-20,0,-10"
+                        
+                     >
+
+                        <TextBox x:Name="fileNameInput"                                 
+                                 Text="{Binding Path=Resource1.filename, Source={StaticResource LocalizedStrings }}"
+
+                                 GotFocus="fileNameInput_GotFocus" 
+                                 KeyUp="fileNameInput_KeyUp"
+                                 LostFocus="fileNameInput_LostFocus"
+                                 />
+                        <toolkit:ListPicker
+                        	x:Name="IEcategoriesListPicker"
+                        	ItemsSource="{Binding CategoriesList}"
+                        	DisplayMemberPath="Name"
+                            Margin="12,-2"
+                            
+                            
+                            />
+
+                    </StackPanel>
+
+
+                </StackPanel>
+            </controls:PanoramaItem>
+
+
+            <controls:PanoramaItem
+                
+                Name="tip"
+                Tap="tip_Tap" Opacity="0.9"
+                >
+                <controls:PanoramaItem.Header>
+
+                    <Button
+                        Name="imagePicker"
+                        Content="{Binding Path=Resource1.imagename, Source={StaticResource LocalizedStrings }}"   
+                             Margin="-22,-15,0,0"
+                        Tap="TextBox_Tap" 
+                            
+                        FontSize="28" Width="444" Background="{StaticResource PhoneAccentBrush}" BorderThickness="0"   />
+
+                </controls:PanoramaItem.Header>
+
+
+
+                <TextBlock 
+                        
+                        
+                      Name="imageTip"
+                        TextWrapping="Wrap" Text="{Binding Path=Resource1.chooseimage, Source={StaticResource LocalizedStrings }}"
+ HorizontalAlignment="Center"
+                               VerticalAlignment="Center" FontSize="40" Height="141" Foreground="{StaticResource PhoneAccentBrush}"
+                               
+                               
+                               />
+
+            </controls:PanoramaItem>
+
+
+
+
+
+
+
+        </controls:Panorama>
+
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

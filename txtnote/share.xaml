@@ -1,0 +1,201 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="txtnote.share"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls"
+     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded"
+    >
+
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="ToUpdateListBoxItemTemplate">
+
+
+
+
+
+            <HyperlinkButton Name="noteLocation"
+                                        Content="{Binding ItemName}"
+                                       
+                                        FontSize="28" 
+                    Grid.Column="1" Grid.ColumnSpan="1" 
+                                 Grid.RowSpan="1"
+                    VerticalAlignment="Top" 
+                                 Margin="0,-6,0,0"        
+                                 >
+            </HyperlinkButton>
+        </DataTemplate>
+        <DataTemplate x:Key="ToDownloadListBoxItemTemplate">
+
+            <Grid HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch"
+                  Width="420" 
+
+                  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                </Grid.RowDefinitions>
+
+                <CheckBox 
+                    Name="checkDownload"   
+                    IsChecked="{Binding IsSelected,Mode=TwoWay}"
+                    Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="0,-10,0,-20"
+
+                    RenderTransformOrigin="0.9,0.9"
+                    
+>
+                </CheckBox>
+
+
+
+                <HyperlinkButton Name="noteLocation2"
+                                        Content="{Binding Name}"
+                                       FontSize="28" 
+                    Grid.Column="1" Grid.ColumnSpan="1" 
+                                 Grid.RowSpan="1"
+                    VerticalAlignment="Top" 
+                                 HorizontalAlignment="Left"
+                                 Margin="0,6,0,-20"      
+                                 >
+                </HyperlinkButton>
+
+
+            </Grid>
+        </DataTemplate>
+
+    </phone:PhoneApplicationPage.Resources>
+
+
+
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <controls:Pivot 
+            Name="shareManager"
+            SelectionChanged="shareManager_SelectionChanged"
+            Title="{Binding Path=Resource1.fenxiang, Source={StaticResource LocalizedStrings }}">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="{Binding Path=Resource1.skydrive, Source={StaticResource LocalizedStrings }}"
+>
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <my:SignInButton Name="btnLogin" ClientId="000000004C0FE34E" Scopes="wl.signin wl.basic wl.skydrive_update wl.skydrive" Branding="Windows" TextType="SignIn" SessionChanged="btnLogin_SessionChanged" VerticalAlignment="Top" 
+                             Visibility="Visible" Margin="0,420,0,0"  HorizontalAlignment="Center"                                                        
+                             />
+                    <ScrollViewer Height="64" HorizontalAlignment="Stretch" Margin="10,362,3,0" VerticalAlignment="Top" Width="419" >
+                        <TextBlock  HorizontalAlignment="Stretch"  Name="infoTextBlock"  VerticalAlignment="Stretch"
+                      TextWrapping="Wrap">             
+                    </TextBlock>
+                    </ScrollViewer>
+
+                    <TextBlock Text="{Binding Path=Resource1.upload_1, Source={StaticResource LocalizedStrings }}"
+                       FontSize="22"
+                       TextWrapping="Wrap"           
+                       Margin="0,-16,0,242"/>
+                    <ListBox Name="noteListBox" 
+                     VerticalAlignment="Stretch"
+                     HorizontalAlignment="Stretch" 
+                     Margin="0,45,0,214"
+                     ItemsSource="{Binding AllToUpdateItems}"   
+                     ItemTemplate="{StaticResource ToUpdateListBoxItemTemplate}"   
+                         >
+
+                    </ListBox>
+
+
+                </Grid>
+
+
+
+            </controls:PivotItem>
+            <!--Pivot download-->
+            <controls:PivotItem
+                Name="downloadItem"
+                Header="{Binding Path=Resource1.xiazai, Source={StaticResource LocalizedStrings }}">
+                <Grid x:Name="ContentPanel2" Grid.Row="1" Margin="12,0,12,0">
+                    <my:SignInButton Name="btnLogin2" ClientId="000000004C0FE34E" Scopes="wl.signin wl.basic wl.skydrive_update wl.skydrive" Branding="Windows" TextType="SignIn" SessionChanged="btnLogin_SessionChanged" VerticalAlignment="Top" 
+                             Visibility="Visible" Margin="0,420,0,0"  HorizontalAlignment="Center"                                                          
+                             />
+
+                    <ScrollViewer Height="64" HorizontalAlignment="Stretch" Margin="10,362,3,0" VerticalAlignment="Top" Width="419" >
+                        <TextBlock  HorizontalAlignment="Stretch"  Name="infoTextBlock2"  VerticalAlignment="Stretch"
+                      TextWrapping="Wrap">
+                        </TextBlock>
+                    </ScrollViewer>
+                    <TextBlock Text="{Binding Path=Resource1.downloadtitle, Source={StaticResource LocalizedStrings }}"
+                       FontSize="22"
+                       TextWrapping="Wrap"           
+                       Margin="0,-16,0,242"/>
+                    <ListBox Name="noteListBox2" 
+                     VerticalAlignment="Stretch"
+                     HorizontalAlignment="Stretch" 
+                     Margin="0,45,0,214"                  
+                     ItemTemplate="{StaticResource ToDownloadListBoxItemTemplate}"   
+                         >
+
+                    </ListBox>
+
+
+                </Grid>
+
+            </controls:PivotItem>
+
+
+            <!--Pivot import-->
+            <controls:PivotItem
+                Name="importItem"
+                Header="{Binding Path=Resource1.daoru, Source={StaticResource LocalizedStrings }}">
+                <Grid x:Name="ContentPanel3" Grid.Row="1" Margin="12,0,12,0">
+                    <my:SignInButton Name="btnLogin3" ClientId="000000004C0FE34E" Scopes="wl.signin wl.basic wl.skydrive_update wl.skydrive" Branding="Windows" TextType="SignIn" SessionChanged="btnLogin_SessionChanged" VerticalAlignment="Top" 
+                             Visibility="Visible" Margin="0,420,0,0"  HorizontalAlignment="Center"                                                         
+                             />
+
+                    <ScrollViewer Height="64" HorizontalAlignment="Stretch" Margin="10,362,3,0" VerticalAlignment="Top" Width="419" >
+                        <TextBlock  HorizontalAlignment="Stretch"  Name="infoTextBlock3"  VerticalAlignment="Stretch"
+                      TextWrapping="Wrap">
+                        </TextBlock>
+                    </ScrollViewer>
+                    <TextBlock Text="{Binding Path=Resource1.importtitle, Source={StaticResource LocalizedStrings }}"
+                       FontSize="22"
+                       TextWrapping="Wrap"           
+                       Margin="0,-16,0,242"/>
+                    <ListBox Name="noteListBox3" 
+                     VerticalAlignment="Stretch"
+                     HorizontalAlignment="Stretch" 
+                     Margin="0,45,0,214"                  
+                     ItemTemplate="{StaticResource ToDownloadListBoxItemTemplate}"   
+                         >
+
+                    </ListBox>
+
+
+                </Grid>
+
+            </controls:PivotItem>
+
+
+
+        </controls:Pivot>
+    </Grid>
+
+
+
+
+
+</phone:PhoneApplicationPage>

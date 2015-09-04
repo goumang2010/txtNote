@@ -1,0 +1,83 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="txtnote.Add"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded_1">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="txtnote" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Name="guide" Text="输入内容" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox Name="editTextBox"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     TextChanged="editTextBox_TextChanged_1"
+                     />
+            <Canvas  Name="nameDialog"
+                     Background="Black"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="52,10,0,0"
+                     Width="350"
+                     Height="228"
+                     Visibility="Collapsed">
+                <TextBlock Text="请输入文件名："
+                           Width="330"
+                           Height="75"
+                           TextWrapping="Wrap"
+                           Canvas.Left="10"
+                           Canvas.Top="10"
+                           FontSize="22"/>
+                <TextBox Name="fileNameInput"
+                    Canvas.Left="10" Canvas.Top="59" Width="330" />
+                <Button Name="cancelButton"
+                        Canvas.Left="10"
+                        Canvas.Top="136"
+                        Content="确定"
+                        Width="150"
+                        Click="okButton_Click_1"
+                        />
+                <Button Name="deleteButton"
+                        Canvas.Left="190"
+                        Canvas.Top="136"
+                        Content="删除"
+                        Width="150"
+                        Click="deleteButton_Click_1"
+                        />
+
+            </Canvas>
+
+
+
+        </Grid>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"
+                                    IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.cancel.rest.png" Text="Cancel" Click="AppBar_Cancel_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.save.rest.png" Text="Save" Click="AppBar_Save_Click"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

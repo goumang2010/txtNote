@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addImage" xml:space="preserve">
+    <value>附加图片</value>
+  </data>
+  <data name="addtxt" xml:space="preserve">
+    <value>增加txt文件</value>
+  </data>
+  <data name="chooseimage" xml:space="preserve">
+    <value>点击选择更改图片</value>
+  </data>
+  <data name="edittxt" xml:space="preserve">
+    <value>编辑txt文件</value>
+  </data>
+  <data name="fenxiang" xml:space="preserve">
+    <value>分享</value>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>请输入txt文件名</value>
+  </data>
+  <data name="gailan" xml:space="preserve">
+    <value>概览</value>
+  </data>
+  <data name="gongzuo" xml:space="preserve">
+    <value>工作</value>
+  </data>
+  <data name="HelloWorld" xml:space="preserve">
+    <value>搜索内容</value>
+  </data>
+  <data name="imagename" xml:space="preserve">
+    <value>点击选择附加图片的txt</value>
+  </data>
+  <data name="PinToStart" xml:space="preserve">
+    <value>固定到桌面</value>
+  </data>
+  <data name="quanbu" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="quanxuan" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="richang" xml:space="preserve">
+    <value>日常</value>
+  </data>
+  <data name="searchBox" xml:space="preserve">
+    <value>请键入需要搜索的内容</value>
+  </data>
+  <data name="shanchu" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="shili" xml:space="preserve">
+    <value>这是个示例，在此处添加txt内容</value>
+  </data>
+  <data name="skydrive" xml:space="preserve">
+    <value>上传</value>
+  </data>
+  <data name="xingqu" xml:space="preserve">
+    <value>兴趣</value>
+  </data>
+  <data name="baocun" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="chenggong" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="guanlian" xml:space="preserve">
+    <value>关联</value>
+  </data>
+  <data name="okBack" xml:space="preserve">
+    <value>确定放弃保存吗？</value>
+  </data>
+  <data name="pingjia" xml:space="preserve">
+    <value>给个好评</value>
+  </data>
+  <data name="qingchu" xml:space="preserve">
+    <value>放弃</value>
+  </data>
+  <data name="shezhi" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="tuichu" xml:space="preserve">
+    <value>确定退出txtNote？</value>
+    <comment>可更改</comment>
+  </data>
+  <data name="upload_1" xml:space="preserve">
+    <value>准备上传的txt：</value>
+  </data>
+  <data name="xiazai" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="background" xml:space="preserve">
+    <value>更换背景图片</value>
+  </data>
+  <data name="chuangjian" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="contactwritter" xml:space="preserve">
+    <value>联系作者</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>邮件分享</value>
+  </data>
+  <data name="mingcheng" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="paixufangshi" xml:space="preserve">
+    <value>排序方式</value>
+  </data>
+  <data name="xiugai" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="shareInfo_1" xml:space="preserve">
+    <value>未登录,请点击“登录”</value>
+  </data>
+  <data name="shareInfo_2" xml:space="preserve">
+    <value>已登录</value>
+  </data>
+  <data name="shareInfo_3" xml:space="preserve">
+    <value>已准备好上传</value>
+  </data>
+  <data name="shareInfo_4" xml:space="preserve">
+    <value>微博分享</value>
+  </data>
+  <data name="shareInfo_5" xml:space="preserve">
+    <value>合并上传</value>
+  </data>
+  <data name="shareInfo_6" xml:space="preserve">
+    <value>确定上传吗? 上传的txt会覆盖曾经上传的同名txt!</value>
+  </data>
+  <data name="setting_1" xml:space="preserve">
+    <value>语言(重启后生效)</value>
+  </data>
+  <data name="daoru" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="downloadtitle" xml:space="preserve">
+    <value>Skydrive\txtNote中的文件：</value>
+  </data>
+  <data name="importtitle" xml:space="preserve">
+    <value>Skydrive\txtNote\Merge中的文件：</value>
+  </data>
+  <data name="shareInfo_7" xml:space="preserve">
+    <value>确定下载这些文件么? 下载的txt会覆盖已存的同名文件!</value>
+  </data>
+  <data name="bangzhu" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="download_1" xml:space="preserve">
+    <value>如果该文件并不是用UTF-8编码的，则其中的汉字会出现乱码，这时请用记事本保存为UTF-8编码的txt文件，按确定继续</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>1.长按输入框可以精确改变光标位置;
+
+
+2.选中全文检索后，搜索时会搜索所有txt内容及名称;
+
+
+3.通过下面的程序栏，可以轻松的把txt上传到skydrive，或是从skydrive上下载txt文件;
+
+
+4.Skydrive中的默认位置为txtNote,合并上传的文件在Merge文件夹中;
+
+
+5.使用导入功能时，txt和内容间用Tab隔开，所以可以直接把Excel文件保存为UTF-8编码的文本文件。</value>
+  </data>
+  <data name="download_2" xml:space="preserve">
+    <value>下载完成！</value>
+  </data>
+</root>

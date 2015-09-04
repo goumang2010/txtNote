@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="addImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="addtxt" xml:space="preserve">
+    <value>Add txt file</value>
+  </data>
+  <data name="chooseimage" xml:space="preserve">
+    <value>Click to select or replace pictures</value>
+  </data>
+  <data name="edittxt" xml:space="preserve">
+    <value>Edit txt file</value>
+  </data>
+  <data name="fenxiang" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>Please enter the txt name</value>
+  </data>
+  <data name="gongzuo" xml:space="preserve">
+    <value>Work</value>
+  </data>
+  <data name="HelloWorld" xml:space="preserve">
+    <value>Search All</value>
+  </data>
+  <data name="imagename" xml:space="preserve">
+    <value>Click to select the binding txt</value>
+  </data>
+  <data name="PinToStart" xml:space="preserve">
+    <value>Pin to Start</value>
+  </data>
+  <data name="quanbu" xml:space="preserve">
+    <value>All Cat.</value>
+  </data>
+  <data name="quanxuan" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="richang" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="searchBox" xml:space="preserve">
+    <value>Search something here</value>
+  </data>
+  <data name="shanchu" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="shili" xml:space="preserve">
+    <value>This is an example,add the explanation here.</value>
+  </data>
+  <data name="skydrive" xml:space="preserve">
+    <value>Upload </value>
+  </data>
+  <data name="xingqu" xml:space="preserve">
+    <value>Hobbies</value>
+  </data>
+  <data name="baocun" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="chenggong" xml:space="preserve">
+    <value>Succeed</value>
+  </data>
+  <data name="guanlian" xml:space="preserve">
+    <value>link</value>
+  </data>
+  <data name="okBack" xml:space="preserve">
+    <value>Are you sure to go back without saving it?</value>
+  </data>
+  <data name="pingjia" xml:space="preserve">
+    <value>Evaluate</value>
+  </data>
+  <data name="qingchu" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="shezhi" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="tuichu" xml:space="preserve">
+    <value>Are you sure to exit txtNote?</value>
+  </data>
+  <data name="upload_1" xml:space="preserve">
+    <value>files ready to upload to SkyDrive：</value>
+  </data>
+  <data name="xiazai" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="background" xml:space="preserve">
+    <value>Change background image</value>
+  </data>
+  <data name="chuangjian" xml:space="preserve">
+    <value>Create time</value>
+  </data>
+  <data name="contactwritter" xml:space="preserve">
+    <value>Contact </value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="mingcheng" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="paixufangshi" xml:space="preserve">
+    <value>Sort by</value>
+  </data>
+  <data name="xiugai" xml:space="preserve">
+    <value>Edit time</value>
+  </data>
+  <data name="shareInfo_1" xml:space="preserve">
+    <value>Not signed in，please click "sign in"</value>
+  </data>
+  <data name="shareInfo_2" xml:space="preserve">
+    <value>signed in</value>
+  </data>
+  <data name="shareInfo_3" xml:space="preserve">
+    <value>Ready to upload.</value>
+  </data>
+  <data name="shareInfo_4" xml:space="preserve">
+    <value>Community share</value>
+  </data>
+  <data name="shareInfo_5" xml:space="preserve">
+    <value>Merge </value>
+  </data>
+  <data name="shareInfo_6" xml:space="preserve">
+    <value>Are you sure to upload? txt file of the same name will overwrite the file once uploaded!</value>
+  </data>
+  <data name="setting_1" xml:space="preserve">
+    <value>Language(effect after restart the app)</value>
+  </data>
+  <data name="daoru" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="downloadtitle" xml:space="preserve">
+    <value>Files in Skydrive\txtNote :</value>
+  </data>
+  <data name="importtitle" xml:space="preserve">
+    <value>Files in Skydrive\txtNote\Merge :</value>
+  </data>
+  <data name="shareInfo_7" xml:space="preserve">
+    <value>Are you sure to download? txtfile of the same name will overwrite the file existed!</value>
+  </data>
+  <data name="bangzhu" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="download_1" xml:space="preserve">
+    <value>If the file in merge folder is not encoded by UTF-8,please change the encoding way on computer,press OK Button to continue！</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>1.Press the input box for long time to change the cursor position accurately;
+
+2.When "Search All" selected,both content and name of txt files will be searched;
+
+3.You can easily upload or download txt files by "Share Page";
+
+4.In Skydrive,the default folder is "txtNote",and merged file is saved in "Merge" folder;
+
+5.When using "Import Page",name and content is divided by "Tab" in txt file ,so you can copy the Excel table and save as txt files in "Merge" folder with UTF-8;</value>
+  </data>
+  <data name="download_2" xml:space="preserve">
+    <value>Download finished!</value>
+  </data>
+  <data name="gailan" xml:space="preserve">
+    <value>View</value>
+  </data>
+</root>
