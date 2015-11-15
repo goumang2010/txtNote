@@ -155,6 +155,7 @@ namespace txtnote
             switch (((Panorama)sender).SelectedIndex)
             {
                 case 0:
+                    serchHelp();
                     appBar1();
                     break;
                 case 1:

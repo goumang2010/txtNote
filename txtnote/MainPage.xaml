@@ -108,29 +108,29 @@
 
         <!--TitlePanel 包含应用程序的名称和页标题-->
         <!--Panorama 控件-->
-        <controls:Panorama 
+        <phone:Panorama 
             
             Name="MainPano"
             
             SelectionChanged="Panorama_SelectionChanged"
             >
-            <controls:Panorama.Title>
+            <phone:Panorama.Title>
                 <TextBlock
                     Text="txtNote"                   
                     Margin="0,20,0,0"
                     FontSize="150"
                     Height="170"
                     />
-            </controls:Panorama.Title>
+            </phone:Panorama.Title>
 
 
 
-            <controls:PanoramaItem
+            <phone:PanoramaItem
                 Name="ViewPano"
                 >
 
 
-                <controls:PanoramaItem.Header>
+                <phone:PanoramaItem.Header>
 
                     <TextBox Name="serchBox"
                         Text="{Binding Path=Resource1.searchBox, Source={StaticResource LocalizedStrings }}"
@@ -143,7 +143,7 @@
                              TextChanged="serchBox_TextChanged"
                         FontSize="28" Width="497" />
 
-                </controls:PanoramaItem.Header>
+                </phone:PanoramaItem.Header>
                 <Canvas      
                         >
                     <ListBox Name="noteListBox"                                 
@@ -209,13 +209,13 @@
 
 
 
-            </controls:PanoramaItem>
+            </phone:PanoramaItem>
 
 
-            <controls:PanoramaItem
+            <phone:PanoramaItem
                 Name="AddPano"
                 >
-                <controls:PanoramaItem.Header>
+                <phone:PanoramaItem.Header>
 
                     <TextBlock 
                             Name="AddHeader"
@@ -224,7 +224,7 @@
                             VerticalAlignment="Top"
                             Margin="0,-15"
                             />
-                </controls:PanoramaItem.Header>
+                </phone:PanoramaItem.Header>
                 <StackPanel x:Name="ContentPanel" Grid.Row="1" >
                     <Canvas   
                 >
@@ -284,15 +284,15 @@
 
 
                 </StackPanel>
-            </controls:PanoramaItem>
+            </phone:PanoramaItem>
 
 
-            <controls:PanoramaItem
+            <phone:PanoramaItem
                 
                 Name="tip"
                 Tap="tip_Tap" Opacity="0.9"
                 >
-                <controls:PanoramaItem.Header>
+                <phone:PanoramaItem.Header>
 
                     <Button
                         Name="imagePicker"
@@ -302,7 +302,7 @@
                             
                         FontSize="28" Width="444" Background="{StaticResource PhoneAccentBrush}" BorderThickness="0"   />
 
-                </controls:PanoramaItem.Header>
+                </phone:PanoramaItem.Header>
 
 
 
@@ -317,7 +317,7 @@
                                
                                />
 
-            </controls:PanoramaItem>
+            </phone:PanoramaItem>
 
 
 
@@ -325,7 +325,7 @@
 
 
 
-        </controls:Panorama>
+        </phone:Panorama>
 
     </Grid>
 
